@@ -4,11 +4,9 @@ class Vehicle
 		@price = price;
 	end
 	
-	def show_contents
-		print @name,"\t",@price,"\t",@dealer,"\n";
-	end
+	attr_reader :name, :price, :dealer;
 
-	def change_price(price)
+	def change_price=(price)
 		@price = price
 	end
 end
@@ -21,7 +19,7 @@ class Bike < Vehicle
 end
 
 hero = Bike.new("suplendor",25000,"Alok Motors");
-hero.show_contents;
-hero.change_price(30000);
-hero.show_contents;
+print hero.name,"\t",hero.price,"\t",hero.dealer,"\n";
+hero.change_price = 30000;
+print hero.name,"\t",hero.price,"\t",hero.dealer,"\n";
 
