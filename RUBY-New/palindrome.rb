@@ -1,16 +1,22 @@
-def see_if_pal(word)
-	while 1
+def palindrome
+	print "Enter any word:";
+	word = gets.chomp;
+	if word=='q'||word=='Q'
+		return;
+	end
+	while word.length>0
 		if word[0]==word[-1]
-			word = word[1...-1]		
-			if word.length==1
-				break(print "yes, It's a palindrome!");
-			end
+			if word.length==1 || word.length==2
+				print "yes, It's a palindrome!\n";
+				word="";
+			else
+				word = word[1...-1]		
+			end				
 		else
-			break(print "Not a palindrome!");
+			print "Not a palindrome!\n";
+			word="";			
 		end
 	end	
+	palindrome;
 end
-
-print "Enter any word:";
-word = gets.chomp;
-puts see_if_pal(word);
+palindrome;
