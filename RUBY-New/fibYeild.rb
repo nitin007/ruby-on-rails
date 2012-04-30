@@ -4,7 +4,7 @@ def fib_series(max)
 		yield i1
 		i1, i2 = i2, i1+i2
 	end
-	print "\n"
+	puts "";
 end
 
 fib_series(1000) {|f| print f, " " }
