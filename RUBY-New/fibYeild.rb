@@ -6,4 +6,8 @@ def fib_series(max)
 	end
 	print "\n"
 end
+
 fib_series(1000) {|f| print f, " " }
+
+# Use puts instead of print, remove "/n" from the logic
+# Please submit a recursive version as well.
