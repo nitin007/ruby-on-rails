@@ -22,9 +22,9 @@ class Array
 				hsh_inj['even'].push(ath[key]);
 			end
 		end
-		puts hsh_inj;
+		return hsh_inj;
 	end
 end
 
-["abc","def",1234,234,"abcd","x","mnop",5,"zZzZ"].hash_inject;
+puts ["abc","def",1234,234,"abcd","x","mnop",5,"zZzZ"].hash_inject;
 
