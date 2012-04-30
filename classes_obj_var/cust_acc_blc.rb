@@ -1,5 +1,7 @@
+# default value for balance should be 1000. You should not have to specify it.
 class Customer
 	@@acc_no=0;
+
 	def initialize(name,balance)
 		@name = name;
 		@balance = balance;

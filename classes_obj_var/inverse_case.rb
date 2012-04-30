@@ -1,3 +1,4 @@
+# Again you haven't read the API carefully..
 class String
 	def to_s
 		i=0;

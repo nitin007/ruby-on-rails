@@ -4,10 +4,17 @@
 ## Iterate over string using a String class function
 ## The existing approach calculates string length, picka a char from string till its lenght - very C style programming!
 
+
+### Do we need variable i anymore?
+### Dont need a return statement
+
 def occurences(text)
   # Join not needed 
 	i=0;
 
+  ### We can intitialize a hash like ltrhash = {}
+  ### Please use appropriate variable naming
+  
 	ltrhash = Hash.new;
 
 	text.each_char do |c|
