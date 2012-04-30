@@ -1,10 +1,14 @@
+# By convention attr_reader/writer/accessor statements are first statements after opening a class
+# Please stop using ';' at the end of a statement, unless you want to write multiple statements in a single line.
+# Why have you still used 'print "/n".. we talked about using 'puts'
 class Vehicle
+  attr_reader :name, :price, :dealer;
+	
 	def initialize(name,price)
 		@name = name;
 		@price = price;
 	end
 	
-	attr_reader :name, :price, :dealer;
 
 	def change_price=(price)
 		@price = price
