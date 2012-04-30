@@ -9,8 +9,8 @@ class Array
 				ath[x.to_s.length].push(x);
 			end
 		end
-		puts ath;
+		return ath;
 	end
 end
 
-["abc","def",1234,234,"abcd","x","mnop",5,"zZzZ"].array_to_hash;
+puts 	["abc","def",1234,234,"abcd","x","mnop",5,"zZzZ"].array_to_hash;
