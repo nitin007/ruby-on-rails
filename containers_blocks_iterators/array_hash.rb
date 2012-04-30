@@ -1,15 +1,12 @@
 class Array
 	def array_to_hash
 		ath=Hash.new;
-		ref = self;
 		self.each do |x|
 			if	!ath[x.to_s.length]
 				ath[x.to_s.length]=[];
-				ref.each do |y|
-					if(y.to_s.length==x.to_s.length)
-						ath[x.to_s.length].push(y);
-					end
-				end
+				ath[x.to_s.length].push(x);
+			else
+				ath[x.to_s.length].push(x);
 			end
 		end
 		puts ath;
