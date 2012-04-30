@@ -10,17 +10,17 @@ def occurences(text)
 
 	ltrhash = Hash.new;
 
-	while i < text.length
-		if !ltrhash[text[i]]
-			ltrhash[text[i]]=1;
+	text.each_char do |c|
+		if !ltrhash[c]
+			ltrhash[c]=1;
 		else
-			ltrhash[text[i]] += 1;
+			ltrhash[c] += 1;
 		end
 		i+=1
 	end
-	puts ltrhash;
+	return ltrhash;
 end
 
 print "Enter some text:";
 text = gets.chomp;
-occurences(text);
+puts occurences(text)
