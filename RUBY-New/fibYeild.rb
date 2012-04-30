@@ -4,10 +4,9 @@ def fib_series(max)
 		yield i1
 		i1, i2 = i2, i1+i2
 	end
-	puts "";
 end
 
-fib_series(1000) {|f| print f, " " }
+fib_series(1000) {|f| p f }
 
 # Use puts instead of print, remove "/n" from the logic
 # Please submit a recursive version as well.
