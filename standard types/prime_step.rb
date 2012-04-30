@@ -5,7 +5,7 @@ def prime_nums(n)
 		(2...i).step() do |x|
 			if i%x!=0
 				if x==i-1
-					print i," ";
+					yield i;
 				end
 			else
 				break;
@@ -13,7 +13,6 @@ def prime_nums(n)
 		end
 		i+=1;
 	end
-	print "\n";
 end
 
-prime_nums(100);
+puts prime_nums(100){|i| print i," ";}
