@@ -1,5 +1,6 @@
 class Customer
 	@@acc_no=0;
+
 	def initialize(name,balance)
 		@name = name;
 		@balance = balance;

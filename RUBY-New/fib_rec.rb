@@ -1,3 +1,4 @@
+## Dont need to write return
 def fib_rec(n)
 	if(n==1||n==2)
 		return 1;
