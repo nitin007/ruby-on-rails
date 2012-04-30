@@ -1,30 +1,28 @@
 class Array
 	def hash_inject
 		ath=Hash.new;
-		h_inject=Hash.new;
-		h_inject['odd']=[];
-		h_inject['even']=[];
 		
-		ref = self;
-		self.each do |x|
+		self.each do |	x|
 			if	!ath[x.to_s.length]
 				ath[x.to_s.length]=[];
-				ref.each do |y|
-					if(y.to_s.length==x.to_s.length)
-						ath[x.to_s.length].push(y);
-					end
-				end
+				ath[x.to_s.length].push(x);
+			else
+				ath[x.to_s.length].push(x);
 			end
 		end
 		
-		ath.each_key.inject(0) do |c,(key,val)|
-			if key%2
-				h_inject['odd'].push(ath[key]);
+		hsh_inj=Hash.new;
+		hsh_inj['odd']=[];
+		hsh_inj['even']=[];
+		
+		ath.inject(0) do |c,(key,val)|
+			if key%2==1
+				hsh_inj['odd'].push(ath[key]);
 			else
-				h_inject['even'].push(ath[key]);
+				hsh_inj['even'].push(ath[key]);
 			end
 		end
-		puts h_inject;
+		puts hsh_inj;
 	end
 end
 
