@@ -2,7 +2,7 @@ def pascal(n)
 	a=[];
 	b=[];
 	a.push(1,1);
-	b.push(1,1);
+	b.push(1);
 		
 	for i in 0..n
 		if i<=1;
