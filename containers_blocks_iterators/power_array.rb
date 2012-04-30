@@ -9,7 +9,7 @@ class Array
 			pa.push(y);
 			y=1;
 		end
-		print pa,"\n";
+		return pa;
 	end
 end
-[1,2,3,4].power_array(3);
+puts [1,2,3,4].power_array(3);
