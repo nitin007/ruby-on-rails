@@ -7,16 +7,26 @@ def palindrome
 	while word.length>0
 		if word[0]==word[-1]
 			if word.length==1 || word.length==2
-				print "yes, It's a palindrome!\n";
 				word="";
+				yield 1;
 			else
 				word = word[1...-1]		
 			end				
 		else
-			print "Not a palindrome!\n";
 			word="";			
+			yield false;
 		end
 	end	
-	palindrome;
+	wrap;
 end
-palindrome;
+
+def wrap
+	palindrome do |f|
+		if f
+			p "yes, It's a palindrome!";
+		else
+			p "Not a palindrome!";
+		end
+	end
+end
+wrap;
