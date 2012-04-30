@@ -1,17 +1,17 @@
 class String
 	def to_s
 		i=0;
-		while i<self.length
-			if self[i].match(/[a-z]/)
-				print self[i].upcase;
-				i+=1;
-			else
-				print self[i].downcase;
-				i+=1;
-			end
+		self.each_char do |c|
+			yield c,c.match(/[a-z]/);
 		end
-		print "\n";
 	end
 end
 
-"hello WORLD".to_s;
+"hello WORLD".to_s do |c,f|
+	if f
+		print c.upcase;
+	else
+		print c.downcase;
+	end
+end
+
