@@ -1,7 +1,7 @@
 class Interest
 	attr_accessor :principle, :time	
 	
-	def compund_minus_simple_interest
+	def compund_simple_amt_diff
 		temp = 1
 		@time.times {temp = temp*1.1}
 
@@ -18,4 +18,4 @@ print "Enter Principle : "
 interest_calc.principle = gets.chomp.to_i
 print "Enter time : "
 interest_calc.time = gets.chomp.to_i
-puts interest_calc.compund_minus_simple_interest
+p interest_calc.compund_simple_amt_diff
