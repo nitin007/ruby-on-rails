@@ -10,24 +10,24 @@
 
 def occurences(text)
   # Join not needed 
-	i=0;
 
   ### We can intitialize a hash like ltrhash = {}
   ### Please use appropriate variable naming
+ 
+ 	#changes done
   
-	ltrhash = Hash.new;
+	ltrhash = {};
 
 	text.each_char do |c|
 		if !ltrhash[c]
-			ltrhash[c]=1;
+			ltrhash[c]=1
 		else
-			ltrhash[c] += 1;
+			ltrhash[c] += 1
 		end
-		i+=1
 	end
-	return ltrhash;
+	ltrhash
 end
 
-print "Enter some text:";
-text = gets.chomp;
-puts occurences(text)
+print "Enter some text:"
+text = gets.chomp
+p occurences(text)
