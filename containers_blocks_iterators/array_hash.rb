@@ -1,16 +1,17 @@
 class Array
 	def array_to_hash
-		ath=Hash.new;
+		ath={}
 		self.each do |x|
-			if	!ath[x.to_s.length]
-				ath[x.to_s.length]=[];
-				ath[x.to_s.length].push(x);
+			len = x.to_s.length
+			if	!ath[len]
+				ath[len]=[]
+				ath[len].push(x)
 			else
-				ath[x.to_s.length].push(x);
+				ath[len].push(x)
 			end
 		end
-		return ath;
+		ath
 	end
 end
 
-puts 	["abc","def",1234,234,"abcd","x","mnop",5,"zZzZ"].array_to_hash;
+p	["abc","def",1234,234,"abcd","x","mnop",5,"zZzZ"].array_to_hash
