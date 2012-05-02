@@ -18,7 +18,7 @@ def palindrome
 			word=""
 			#since we want to execute untill user enters q/Q return will abort the program
 			yield "Not a palindrome!"
-			# Why are we using yield ??????????? I think you just want to return
+			# Why are we using yield ??????????? I think you just want to return   
 		end
 	end	
 	wrap
