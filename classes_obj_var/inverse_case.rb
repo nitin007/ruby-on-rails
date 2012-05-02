@@ -1,4 +1,6 @@
 # Again you haven't read the API carefully..
+
+#changes done
 class String
 	def to_s
 		self.swapcase
