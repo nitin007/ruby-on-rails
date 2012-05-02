@@ -1,14 +1,12 @@
 class Shapes
 	def area(shape,*args)
 		if shape == "rectangle" and args.size==2
-			return args.inject(1){|pro,ele| pro*ele}
-		end
+			args.inject(1){|pro,ele| pro*ele}
 		
-		if shape == "circle" and args.size==1
-			return 3.14*args.first*args.first
-		end
+		elsif shape == "circle" and args.size==1
+			3.14*args.first*args.first
 		
-		if shape == "triangle" and args.size==2
+		else
 			0.5*args.first*args.last
 		end
 	end
@@ -18,6 +16,6 @@ rectangle = Shapes.new
 circle = Shapes.new
 triangle = Shapes.new
 
-puts rectangle.area("rectangle",2,6)
-puts circle.area("circle",3)
-puts triangle.area("triangle",5,6)
+p rectangle.area("rectangle",2,6)
+p circle.area("circle",3)
+p triangle.area("triangle",5,6)
