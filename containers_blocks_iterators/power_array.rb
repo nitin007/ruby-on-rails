@@ -1,15 +1,13 @@
 class Array
 	def power_array(n)
-		pa = [];
-		y=1;
+		pa = []
+		y = 1
 		self.each do |x|
-			n.times do
-				y=y*x;
-			end
-			pa.push(y);
-			y=1;
+			n.times { y = y*x }
+			pa.push(y)
+			y=1
 		end
-		return pa;
+		pa
 	end
 end
-puts [1,2,3,4].power_array(3);
+p [1,2,3,4].power_array(3)
