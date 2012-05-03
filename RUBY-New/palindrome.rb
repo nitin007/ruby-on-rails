@@ -6,7 +6,7 @@ def palindrome
     # exit and abort
 		exit
 	end
-	while word.length>0
+	while !word.empty?
 		if word[0]==word[-1]
 			if word.length==1 || word.length==2
 				word="";
