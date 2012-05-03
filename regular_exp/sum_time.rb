@@ -1,44 +1,53 @@
-def view(*args)
-	puts args
+def view(str)
+	p str
 end
 
 
-def add_time_values(time1,time2)
-	if time1.match(/(\d\d):(\d\d):(\d\d)/) && time2.match(/(\d\d):(\d\d):(\d\d)/)
-		t2_hr = $1.to_i; t2_min = $2.to_i; t2_sec = $3.to_i
-		
-		time1.match(/(\d\d):(\d\d):(\d\d)/)
-		t1_hr = $1.to_i; t1_min = $2.to_i; t1_sec = $3.to_i
-		
-		if(t1_hr<24 && t2_hr<24 && t1_min<60 && t2_min<60 && t1_sec<60 && t2_sec<60)
-			tt_hr = t1_hr+t2_hr
-			tt_min = t1_min+t2_min
-			tt_sec = t1_sec+t2_sec
-		
-			if tt_sec >= 60
-				tt_min += tt_sec/60.abs
-				tt_sec -= 60
-			end
-		
-			if tt_min >= 60
-				tt_hr += tt_min/60.abs
-				tt_min -= 60
-			end
-		
-			if tt_hr >= 24
-				view("one day & ")
-				tt_hr -= 24
-			end
-		
-			view("#{tt_hr}:#{tt_min}:#{tt_sec}")
-		else
-			view("values not valid!")
-		end
+def resulting_time(hrs,mins,secs)
+	r_d = 0	
+	
+	total_hrs = hrs.inject(0) {|sum,ele| sum+ele}
+	total_mins = mins.inject(0) {|sum,ele| sum+ele}
+	total_secs = secs.inject(0) {|sum,ele| sum+ele}
+	
+	r_s = total_secs%60
+	total_mins += total_secs/60.abs
+	
+	r_m = total_mins%60
+	total_hrs += total_mins/60.abs
+	
+	r_h = total_hrs%24
+	r_d +=  total_hrs/24.abs
+	if r_d != 0
+		view "#{r_d} day & #{r_h}:#{r_m}:#{r_s}"
 	else
-		view("values not valid!")
+		view "#{r_h}:#{r_m}:#{r_s}"
 	end
 end
 
-add_time_values("23:59:59","23:59:59")
 
+def add_times(*args)
+	hrs = []
+	mins = []
+	secs = []
+	
+	args.each do |time|
+		if time.match(/^(\d{1,2})?:(\d{1,2})?:(\d{1,2})$/)
+			if $1.to_i >= 24 || $2.to_i >= 60 || $3.to_i >= 60
+				view "values out of range!"
+				exit
+			else
+				hrs.push($1.to_i)
+				mins.push($2.to_i)
+				secs.push($3.to_i)
+			end
+		else
+			view "Values not valid!"
+			exit
+		end
+	end
+	resulting_time(hrs,mins,secs)
+end
+
+add_times("11:23:07","22:53:45")
 
